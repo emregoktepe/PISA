@@ -34,7 +34,7 @@ schemaCallback([tableInfo]);
         time = "",
         obs = 0;
 
-    	$.getJSON("http://stats.oecd.org/SDMX-JSON/data/AIR_EMISSIONS/all/all?dimensionAtObservation=AllDimensions&detail=dataonly", function (resp) {
+    	$.getJSON("https://stats.oecd.org/SDMX-JSON/data/AIR_EMISSIONS/all/all?dimensionAtObservation=AllDimensions&detail=dataonly", function (resp) {
         var obsvs = resp.dataSets[0].observations; 
 
 		console.log(obsvs);
