@@ -34,18 +34,12 @@ schemaCallback([tableInfo]);
         time = "",
         obs = 0;
 
-    	$.getJSON("http://stats.oecd.org/SDMX-JSON/data/AIR_EMISSIONS/all/all?dimensionAtObservation=AllDimensions&detail=dataonly", function (resp) {
+    	$.getJSON("https://stats.oecd.org/SDMX-JSON/data/AIR_EMISSIONS/all/all?dimensionAtObservation=AllDimensions&detail=dataonly", function (resp) {
         var obsvs = resp.dataSets[0].observations; 
 
-		console.log(obsvs);
-		console.log(Object.keys(obsvs).length);
-		console.log(Object.keys(obsvs)[0]);
-		console.log(Object.keys(obsvs)[1]);
-		console.log(obsvs[Object.keys(obsvs)[0]][0]);
 		
         for (var i = 0, len = Object.keys(obsvs).length; i < len; i++) {
 			
-			console.log(Object.keys(obsvs)[i]);
 			
 			var arrKey = Object.keys(obsvs)[i].split(':')
 			
