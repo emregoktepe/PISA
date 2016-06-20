@@ -29,12 +29,13 @@ Version 2.0 of the Web Data Connector fits the bill nicely with the getSchema an
 sdmxjsonwdc Example
 ---------------
 This is only a first step towards the goal. I have created a very basic connector that sources data from a specific web service in OECD
-http://stats.oecd.org/viewhtml.aspx?datasetcode=AIR_EMISSIONS  
+http://stats.oecd.org/viewhtml.aspx?datasetcode=AIR_EMISSIONS  (and I had to limit the data for one country: United Kingdom)
 Given my limited experience using JavaScript and JSON (and GitHub) I was able to extract data about Air Emissions of Pollutants.
 However there is a lot of work that can be done on this WDC, for instance:
 * having an interactive list of available datasets from OECD and letting the user choose.
 * the list of dimensions and available values can allow a user to chose a subset of data (OECD allows parameters to be set in the URL for the JSON data)
 * dynamically constructing the columns and populating them with values defined by the SDMX structure
+(I did manage to lookup the key values from the structure part of the JSON data to populate the columns with actual values)
 
 I hope the Tableau community can develop this WDC further !
 
