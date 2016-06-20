@@ -43,10 +43,10 @@ schemaCallback([tableInfo]);
 			
 			var arrKey = Object.keys(obsvs)[i].split(':')
 			
-            cou = arrKey[0];
-            pol = arrKey[1];
-            vari = arrKey[2];
-            time = arrKey[3];
+            cou = resp.structure.dimensions.observation[0].values[arrKey[0]].name;
+            pol = resp.structure.dimensions.observation[1].values[arrKey[1]].name;
+            vari = resp.structure.dimensions.observation[2].values[arrKey[2]].name;
+            time = resp.structure.dimensions.observation[3].values[arrKey[3]].name;
             obs = obsvs[Object.keys(obsvs)[i]][0]; 
 
             tableData.push({
