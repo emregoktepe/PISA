@@ -12,7 +12,7 @@
     ];
 
     var tableInfo = {
-        id : "Air Emissions",
+        id : "Air_Emissions",
         alias : "Emissions of air pollutants",
         columns : cols
     };
