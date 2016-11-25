@@ -21,19 +21,7 @@
     };
 
 
-schemaCallback([tableInfo]);
-
-	
-        { id : "COU", alias : "COU", dataType : tableau.dataTypeEnum.string },
-        { id : "IND", alias : "IND", dataType : tableau.dataTypeEnum.string },
-        { id : "SEX", alias : "SEX", dataType : tableau.dataTypeEnum.string },
-        { id : "AGE", alias : "AGE", dataType : tableau.dataTypeEnum.string },
-        { id : "TIME", alias : "TIME", dataType : tableau.dataTypeEnum.string },
-        { id : "UNIT", alias : "UNIT", dataType : tableau.dataTypeEnum.string },
-        { id : "POWERCODE", alias : "POWERCODE", dataType : tableau.dataTypeEnum.string },
-        { id : "ObsValue", alias : "ObsValue", dataType : tableau.dataTypeEnum.float }
-	
-	
+schemaCallback([tableInfo]);	
     
 };
  
