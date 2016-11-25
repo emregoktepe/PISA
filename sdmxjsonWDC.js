@@ -9,8 +9,6 @@
         { id : "SEX", alias : "SEX", dataType : tableau.dataTypeEnum.string },
         { id : "AGE", alias : "AGE", dataType : tableau.dataTypeEnum.string },
         { id : "TIME", alias : "TIME", dataType : tableau.dataTypeEnum.string },
-        { id : "UNIT", alias : "UNIT", dataType : tableau.dataTypeEnum.string },
-        { id : "POWERCODE", alias : "POWERCODE", dataType : tableau.dataTypeEnum.string },
         { id : "ObsValue", alias : "ObsValue", dataType : tableau.dataTypeEnum.float }
     ];
 
@@ -32,8 +30,6 @@ schemaCallback([tableInfo]);
         SEX = "",
         AGE = "",
         TIME = "",
-        UNIT = "",
-        POWERCODE = "",
         ObsValue = 0;
 
     	$.getJSON("https://stats.oecd.org/SDMX-JSON/data/GENDER_EDU/AUS+AUT+BEL+CAN+CHL+CZE+DNK+EST+FIN+FRA+DEU+GRC+HUN+ISL+IRL+ISR+ITA+JPN+KOR+LVA+LUX+MEX+NLD+NZL+NOR+POL+PRT+SVK+SVN+ESP+SWE+CHE+TUR+GBR+USA+OAVG+NMEC+BRA+CHN+IDN+RUS+ZAF.EDU_10+EDU_10_READ+EDU_10_MATH+EDU_10_SCI.BOYS+GIRLS.TOTAL.2000+2003+2006+2009+2012/all?dimensionAtObservation=AllDimensions&detail=dataonly", function (resp) {
@@ -50,8 +46,6 @@ schemaCallback([tableInfo]);
             SEX = resp.structure.dimensions.observation[2].values[arrKey[2]].name;
             AGE = resp.structure.dimensions.observation[3].values[arrKey[3]].name;
             TIME = resp.structure.dimensions.observation[4].values[arrKey[4]].name;
-            UNIT = resp.structure.dimensions.observation[5].values[arrKey[5]].name;
-            POWERCODE = resp.structure.dimensions.observation[6].values[arrKey[6]].name;
             ObsValue = obsvs[Object.keys(obsvs)[i]][0]; 
 
             tableData.push({
@@ -60,8 +54,6 @@ schemaCallback([tableInfo]);
                 "SEX" : SEX,
                 "AGE" : AGE,
                 "TIME" : TIME,
-                "UNIT" : UNIT,
-                "POWERCODE" : POWERCODE,
                 "ObsValue" : ObsValue
             });
 			
