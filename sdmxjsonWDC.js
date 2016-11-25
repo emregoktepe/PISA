@@ -48,7 +48,7 @@ schemaCallback([tableInfo]);
         POWERCODE = "",
         ObsValue = 0;
 
-    	$.getJSON("http://stats.oecd.org/restsdmx/sdmx.ashx/GetData/GENDER_EDU/AUS+AUT+BEL+CAN+CHL+CZE+DNK+EST+FIN+FRA+DEU+GRC+HUN+ISL+IRL+ISR+ITA+JPN+KOR+LVA+LUX+MEX+NLD+NZL+NOR+POL+PRT+SVK+SVN+ESP+SWE+CHE+TUR+GBR+USA+OAVG+NMEC+BRA+CHN+IDN+RUS+ZAF.EDU_10+EDU_10_READ+EDU_10_MATH+EDU_10_SCI.BOYS+GIRLS.TOTAL.2000+2003+2006+2009+2012/all?", function (resp) {
+    	$.getJSON("https://stats.oecd.org/SDMX-JSON/data/GENDER_EDU/AUS+AUT+BEL+CAN+CHL+CZE+DNK+EST+FIN+FRA+DEU+GRC+HUN+ISL+IRL+ISR+ITA+JPN+KOR+LVA+LUX+MEX+NLD+NZL+NOR+POL+PRT+SVK+SVN+ESP+SWE+CHE+TUR+GBR+USA+OAVG+NMEC+BRA+CHN+IDN+RUS+ZAF.EDU_10+EDU_10_READ+EDU_10_MATH+EDU_10_SCI.BOYS+GIRLS.TOTAL.2000+2003+2006+2009+2012/all?dimensionAtObservation=AllDimensions&detail=dataonly", function (resp) {
         var obsvs = resp.dataSets[0].observations; 
 
 		
