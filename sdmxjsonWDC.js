@@ -13,7 +13,7 @@
     ];
 
     var tableInfo = {
-        id : PISA_Results,
+        id : "PISA_Results",
         alias : "PISA Sonuçları",
         columns : cols
     };
