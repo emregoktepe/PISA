@@ -1,49 +1,17 @@
-# Tableau SDMX-JSON Web Data Connector
-This is an initial attempt to create a Web Data Connector to access data in SDMX/SDMX-JSON format.
+# Tableau SDMX-JSON Web Data Connector for OECD PISA Scores
 
-SDMX
----------------
-SDMX, which stands for Statistical Data and Metadata eXchange is an international initiative that aims at standardising and modernising (“industrialising”) the mechanisms and processes for the exchange of statistical data and metadata among international organisations and their member countries.
+This Web Data Connector is a clone of SDMX-JSON Web Data Connector from https://github.com/saviohenriques/sdmxjsonwdc which connects to OECD database for UK air emmisions.
 
-SDMX is sponsored by seven international organisations:
-* Bank for International Settlements (BIS)
-* European Central Bank (ECB)
-* Eurostat (Statistical Office of the European Union)
-* International Monetary Fund (IMF)
-* Organisation for Economic Cooperation and Development (OECD)
-* United Nations Statistical Division (UNSD)
-* World Bank
+I replaced field names and connection URL using SDMX (XML) Data URL from http://stats.oecd.org/
 
-You can read more about this at https://sdmx.org/
+Detail:
+"http://stats.oecd.org/restsdmx/sdmx.ashx/GetData/" part of the Data URL should be changed as "https://stats.oecd.org/SDMX-JSON/data/"
+and "dimensionAtObservation=AllDimensions&detail=dataonly" part should be added to the end.
 
-Tableau WDC
----------------
-There is a gold mine of data publicly available for analysts from some of the above organisations.
-e.g. The OECD provides access to datasets in the catalogue of OECD databases through a RESTful application programming interface (API) based on the SDMX-JSON standard.  This allows a developer to easily call the API using simple RESTful URL programmatically.
-Source: https://data.oecd.org/api/sdmx-json-documentation/
+So, this, (data URL from OECD stat page):
+http://stats.oecd.org/restsdmx/sdmx.ashx/GetData/GENDER_EDU/AUS+AUT+BEL+CAN+CHL+CZE+DNK+EST+FIN+FRA+DEU+GRC+HUN+ISL+IRL+ISR+ITA+JPN+KOR+LVA+LUX+MEX+NLD+NZL+NOR+POL+PRT+SVK+SVN+ESP+SWE+CHE+TUR+GBR+USA+OAVG+NMEC+BRA+CHN+IDN+RUS+ZAF.EDU_10+EDU_10_READ+EDU_10_MATH+EDU_10_SCI.BOYS+GIRLS.TOTAL.2000+2003+2006+2009+2012/all?
+becomes this (the one that I used):
+https://stats.oecd.org/SDMX-JSON/data/GENDER_EDU/AUS+AUT+BEL+CAN+CHL+CZE+DNK+EST+FIN+FRA+DEU+GRC+HUN+ISL+IRL+ISR+ITA+JPN+KOR+LVA+LUX+MEX+NLD+NZL+NOR+POL+PRT+SVK+SVN+ESP+SWE+CHE+TUR+GBR+USA+OAVG+NMEC+BRA+CHN+IDN+RUS+ZAF.EDU_10+EDU_10_READ+EDU_10_MATH+EDU_10_SCI.BOYS+GIRLS.TOTAL.2000+2003+2006+2009+2012/all?dimensionAtObservation=AllDimensions&detail=dataonly
 
-The SDMX initiative sets standards for facilitating exchange of data and metadata. Availability of data in SDMX format through web services (like REST) provides an opportunity to source data via a dynamic data model. This has been my original intention behind this project. The idea is to access the API and construct tables and define columns by parsing the information in the SDMX standard. The corresponding statistical data can be then processed and consumed by Tableau.
+(At least this was the case for me to connect.)
 
-Version 2.0 of the Web Data Connector fits the bill nicely with the getSchema and getData methods.
-
-sdmxjsonwdc Example
----------------
-This is only a first step towards the goal. I have created a very basic connector that sources data from a specific web service in OECD
-http://stats.oecd.org/viewhtml.aspx?datasetcode=AIR_EMISSIONS  (and I had to limit the data for one country: United Kingdom)
-Given my limited experience using JavaScript and JSON (and GitHub) I was able to extract data about Air Emissions of Pollutants.
-However there is a lot of work that can be done on this WDC, for instance:
-* having an interactive list of available datasets from OECD and letting the user choose.
-* the list of dimensions and available values can allow a user to chose a subset of data (OECD allows parameters to be set in the URL for the JSON data)
-* dynamically constructing the columns and populating them with values defined by the SDMX structure
-(I did manage to lookup the key values from the structure part of the JSON data to populate the columns with actual values)
-
-I hope the Tableau community can develop this WDC further !
-
-References
----------------
-https://sdmx.org/  
-http://www.oecd.org/  
-http://www.tableau.com/  
-https://github.com/  
-https://en.wikipedia.org  
-https://github.com/tableau/webdataconnector  
