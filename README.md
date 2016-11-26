@@ -19,3 +19,7 @@ https://stats.oecd.org/SDMX-JSON/data/GENDER_EDU/AUS+AUT+BEL+CAN+CHL+CZE+DNK+EST
 
 (At least this was the case for me to connect.)
 
+
+You can see Tableau Public file created using this connector here:
+
+https://public.tableau.com/views/OECDPISA/Pano?:embed=y&:display_count=yes
